@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class SalespersonEarnings {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        double basePay = 200.0;
+        double commissionRate = 0.09;
+		
+        System.out.print("Enter the number of sold items sold: ");
+        int numItems = scanner.nextInt();
+		double totalSales = 0.0;
+		
+		for (int i = 1; i <= numItems; i++)
+{
+             System.out.print("Enter the value of item" + i + ": ");
+             double itemValue = scanner.nextDouble();
+             totalSales += itemValue;
+        }
+		
+        double commission = totalSales * commissionRate;
+		double totalEasrnings = basePay + commission;
+		
+		System.out.printf("Total earnings for the week: $%.2f%n", totalEasrnings);
+		
+		scanner.close();
+    }
+}
