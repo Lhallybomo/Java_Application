@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class PayrollCalculator {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        for (int i = 1; i <= 3; i++) {
+            System.out.print("Enter employee " + i + "'s name: ");
+            String name = input.nextLine();
+
+            System.out.print("Enter hours worked by " + name + ": ");
+            double hoursWorked = input.nextDouble();
+
+            System.out.print("Enter hourly rate for " + name + ": ");
+            double hourlyRate = input.nextDouble();
+
+            double overtimeHours = Math.max(0, hoursWorked - 40);
+            double regularHours = hoursWorked - overtimeHours;
+
+            double regularPay = regularHours * hourlyRate;
+            double overtimePay = overtimeHours * hourlyRate * 1.5;
+            double grossPay = regularPay + overtimePay;
+
+            System.out.printf("%s's gross pay: $%.2f\n", name, grossPay);
+        }
+
+        input.close();
+    }
+}

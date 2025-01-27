@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class TwoLargestNumbers {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        int counter = 1;
+        int number;
+        int largest1, largest2;
+
+        // Input the first two numbers and initialize largest1 and largest2
+        System.out.print("Enter number 1: ");
+        largest1 = input.nextInt();
+
+        System.out.print("Enter number 2: ");
+        number = input.nextInt();
+        largest2 = (number > largest1) ? largest1 : number;
+        largest1 = (number > largest1) ? number : largest1;
+
+        // Process the remaining 8 numbers
+        while (counter < 10) {
+            System.out.print("Enter number " + (counter + 1) + ": ");
+            number = input.nextInt();
+
+            if (number > largest1) {
+                largest2 = largest1;
+                largest1 = number;
+            } else if (number > largest2) {
+                largest2 = number;
+            }
+
+            counter++;
+        }
+
+        System.out.println("The two largest numbers are: " + largest1 + " and " + largest2);
+
+        input.close();
+    }
+}

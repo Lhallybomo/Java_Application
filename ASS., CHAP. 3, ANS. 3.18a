@@ -1,0 +1,50 @@
+import java.util.Scanner;
+ 
+public class problemg
+{
+  public static void main(String[] args)
+       {
+        Scanner scan = new Scanner (System.in);
+        {
+        //Let's declare our account detail variables
+        //Note: to make coding faster, you can declare variables
+        //that use the same data type (e.g., int) together with
+        //with a comma to separat the variables, without or without
+        //initializing them (e.g., making them equal to something)
+        int account = 1, balance,charges,credits,credit_limit, newbal;
+         
+        //Let's assume that an account number can't be zero so that
+        //we can loop over every customer account number until we
+        //type in 0 to tell the program to stop
+        while( account != 0 )
+          {
+          //Let's just add a new blank line to make things look nicer
+          System.out.println();
+          System.out.print("Input Account Number: ");
+          account = scan.nextInt();          
+           
+          System.out.print("Input Beginning Balance: ");
+          balance = scan.nextInt();
+           
+          System.out.print("Input Total Charges: ");
+          charges = scan.nextInt();
+           
+          System.out.print("Input Total Credits: ");
+          credits = scan.nextInt();
+           
+          System.out.print("Input Credit Limit: ");
+          credit_limit = scan.nextInt();
+ 
+          //And time for the calculations and displaying what the paragraph wants
+          newbal = balance + charges - credits;
+          System.out.println("Equivalent New Balnce: " + newbal);
+ 
+               if ( newbal > credit_limit)
+               {
+                  System.out.println("Credit Limit Exceeded");
+                break;
+               }
+          }
+       }
+}
+}
